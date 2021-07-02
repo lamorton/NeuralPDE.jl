@@ -778,7 +778,7 @@ function SciMLBase.symbolic_discretize(pde_system::PDESystem, discretization::Ph
 
     # dimensionality of equation
     dim = length(domains)
-    depvars,indvars,dict_indvars,dict_depvars = get_vars(pde_system.indvars, pde_system.depvars)
+    depvars,indvars,dict_indvars,dict_depvars = get_vars(pde_system.ivs, pde_system.dvs)
 
     chain = discretization.chain
     initθ = discretization.init_params
@@ -830,7 +830,7 @@ function SciMLBase.discretize(pde_system::PDESystem, discretization::PhysicsInfo
 
     # dimensionality of equation
     dim = length(domains)
-    depvars,indvars,dict_indvars,dict_depvars = get_vars(pde_system.indvars,pde_system.depvars)
+    depvars,indvars,dict_indvars,dict_depvars = get_vars(pde_system.ivs,pde_system.dvs)
 
     chain = discretization.chain
     initθ = discretization.init_params
